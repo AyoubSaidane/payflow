@@ -1,0 +1,71 @@
+# 🐍 Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# 🌐 Environment
+venv/
+env/
+.venv/
+
+# 🔒 Secrets & Config
+.env
+.env.local
+*.key
+*secret*
+
+# 🗄️ Database
+*.db
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# 📊 Logs & Temp
+*.log
+*.pid
+.DS_Store
+.claude/
+
+# 🧪 Tests & Demos (keep clean)
+test_*.py
+demo_*.py
+create_test_*.py
+*_test_*.py
+
+# 📱 Static & Media
+staticfiles/
+media/
+
+# 📓 Development
+*.ipynb
+.ipynb_checkpoints/
+
+# 📝 Temporary docs
+GUIDE_*.md
+LANCEMENT_*.md
+README_HIGHCHARTS.md
+
+# 🔧 Generated files
+*dashboard.html
+*config.json
+payroll_analysis_*.json
+*test_export*
+*_live_data.json
+*_flow.json
+*_network.json
+*_timeline.json
+mcp_system_state.json
+
+# 🗂️ Old structure
+project/
+templates/
+static/
+
+# 💾 Backup
+*.bak
+*.tmp
+*.cache

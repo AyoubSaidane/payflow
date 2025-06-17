@@ -1,0 +1,16 @@
+# 🌐 Web Framework
+Django>=4.2.0
+
+# 🤖 AI Agents
+smolagents>=0.3.0
+anthropic>=0.34.0
+
+# 📊 Data & Analysis
+networkx>=3.0
+
+# 🌍 HTTP & Web
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# ⚙️ Configuration
+python-dotenv>=1.0.0
