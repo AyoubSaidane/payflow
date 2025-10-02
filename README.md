@@ -1,62 +1,53 @@
-# 🚀 PayFlow - IA pour l'Analyse de Variables de Paie
+````markdown
+# 🚀 PayFlow — AI-Powered Payroll Variable Analysis  
 
-[![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://djangoproject.com/)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org/)
+[![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://djangoproject.com/)  
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org/)  
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Application Django avancée pour l'analyse automatisée des variables de paie utilisant des agents IA et des visualisations interactives en temps réel.**
+**An advanced Django application for automated payroll variable extraction and analysis using AI agents and real-time interactive visualizations.**
+
+> 🏆 **This project was built during the [Agents Hackathon — Hugging Face × Anthropic × Unaite](https://lu.ma/agents-hackathon) (Paris, June 15) and WON the hackathon’s top prize!**
 
 ---
 
-## 🎯 Vue d'ensemble
+## 🎯 Overview  
 
-PayFlow révolutionne l'analyse des conventions collectives françaises en automatisant la détection et la création de variables de paie. Grâce à des agents IA sophistiqués et une interface web moderne, transformez vos documents légaux en systèmes de paie intelligents.
+**PayFlow** transforms how French collective bargaining agreements (CBAs) are analyzed by automating the detection and generation of payroll variables.  
+Using sophisticated AI agents and a modern web interface, it turns complex legal texts into actionable payroll intelligence.
 
-### ✨ Fonctionnalités Principales
+### ✨ Key Features
 
-| 🤖 **Agents IA** | 📊 **Visualisations** | 🔍 **Monitoring** |
-|:-----------------|:----------------------|:------------------|
-| Analyse contextuelle automatique | Graphiques Highcharts interactifs | Dashboard temps réel |
-| Détection de variables de paie | Relations NetworkGraph | Suivi des agents IA |
-| Intégration NetworkX | Timeline des créations | Métriques de performance |
-| Claude AI pour l'analyse légale | Graphiques secteurs | États et statistiques |
+| 🤖 **AI Agents** | 📊 **Interactive Visuals** | 🔍 **Monitoring** |
+|:-----------------|:---------------------------|:------------------|
+| Context-aware analysis | Interactive Highcharts graphs | Real-time dashboard |
+| Automatic payroll variable detection | NetworkGraph relations | AI agent activity tracking |
+| NetworkX integration | Timeline of variable creation | Performance metrics |
+| Claude AI for legal text analysis | Pie & sector charts | Agent state/statistics |
 
 ---
 
-## 🚀 Installation Rapide
+## 🚀 Quick Start
 
-### Méthode automatique (recommandée)
-
+### Automatic (recommended)
 ```bash
-# 1. Cloner le repository
 git clone https://github.com/AyoubSaidane/payflow.git
 cd payflow
-
-# 2. Lancement automatique
 ./start_app.sh
-```
+````
 
-### Méthode manuelle
+### Manual
 
 ```bash
-# 1. Environnement virtuel
 python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
-# ou venv\Scripts\activate  # Windows
+# or venv\Scripts\activate  # Windows
 
-# 2. Installation des dépendances
 pip install -r requirements.txt
-
-# 3. Configuration
-cp .env.example .env
-# Éditer .env avec votre clé API Anthropic
-
-# 4. Base de données
+cp .env.example .env  # configure your Anthropic API key
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
-
-# 5. Lancement
 python manage.py runserver
 ```
 
@@ -64,212 +55,85 @@ python manage.py runserver
 
 ## ⚙️ Configuration
 
-### Variables d'environnement requises
+Create a `.env` file with:
 
-**⚠️ IMPORTANT : Configuration des clés API**
+```env
+ANTHROPIC_API_KEY=your-anthropic-api-key
+SECRET_KEY=your-django-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+```
 
-1. **Copiez le fichier d'exemple :**
-   ```bash
-   cp .env.example .env
-   ```
-
-2. **Éditez le fichier `.env` et configurez vos clés :**
-   ```env
-   # 🔑 API Configuration - REMPLACEZ PAR VOS VRAIES CLÉS
-   ANTHROPIC_API_KEY=your-anthropic-api-key-here
-   
-   # ⚙️ Django Configuration - GÉNÉREZ UNE CLÉ SECRÈTE UNIQUE
-   SECRET_KEY=your-django-secret-key-here
-   DEBUG=True
-   
-   # 🌐 Server Configuration
-   ALLOWED_HOSTS=localhost,127.0.0.1
-   ```
-
-3. **Obtenez votre clé Anthropic API :**
-   - Rendez-vous sur [console.anthropic.com](https://console.anthropic.com)
-   - Créez un compte et générez une clé API
-   - Remplacez `your-anthropic-api-key-here` par votre vraie clé
-
-4. **Générez une clé secrète Django :**
-   ```python
-   # Dans un terminal Python
-   from django.core.management.utils import get_random_secret_key
-   print(get_random_secret_key())
-   ```
-
-**🔒 Sécurité :** Ne commitez jamais vos vraies clés API dans le repository !
+> ⚠️ **Security:** Never commit real API keys.
 
 ---
 
-## 🌐 Interface Web
+## 🌐 Web Interface
 
-| URL | Description | Fonctionnalité |
-|:----|:------------|:---------------|
-| [`http://127.0.0.1:8000/`](http://127.0.0.1:8000/) | **Dashboard principal** | Vue d'ensemble et accès rapide |
-| [`http://127.0.0.1:8000/conventions/`](http://127.0.0.1:8000/conventions/) | **Gestion des conventions** | Import, analyse, résultats |
-| [`http://127.0.0.1:8000/monitoring/`](http://127.0.0.1:8000/monitoring/) | **Monitoring temps réel** | Suivi des agents IA |
-| [`http://127.0.0.1:8000/admin/`](http://127.0.0.1:8000/admin/) | **Administration** | Gestion utilisateurs et données |
+| URL             | Description                   |
+| --------------- | ----------------------------- |
+| `/`             | Main dashboard                |
+| `/conventions/` | Manage and analyze CBAs       |
+| `/monitoring/`  | Real-time AI agent monitoring |
+| `/admin/`       | Django admin                  |
 
 ---
 
-## 🔄 Workflow d'Utilisation
+## 🔄 Workflow
 
-### 1. 📥 Import Convention
-```
-Légifrance ID → API Gouvernementale → Articles analysables
-```
+1. **📥 Import CBA** — Retrieve legal articles from Légifrance API
+2. **🤖 AI Analysis** — PayFlow agents detect and structure payroll variables
+3. **📊 Visualization** — Interactive Highcharts graphs, JSON export
+4. **🔍 Monitoring** — Real-time agent activity and metrics
 
-### 2. 🤖 Analyse IA
-```
-Question utilisateur → PayFlow Agent → Analyse contextuelle → Variables détectées
-```
+---
 
-### 3. 📊 Visualisation
-```
-Variables créées → Highcharts → Graphiques interactifs → Export JSON
-```
+## 🏗️ Tech Architecture
 
-### 4. 🔍 Monitoring
 ```
-Actions agents → Server-Sent Events → Dashboard temps réel → Statistiques
+🌐 Django Web App
+ ├─ Views & Templates
+ ├─ AI Services (Claude)
+ ├─ Real-time Monitoring (SSE)
+ └─ External APIs: Légifrance + Anthropic
 ```
 
 ---
 
-## 🏗️ Architecture Technique
+## 🔧 Technologies
 
-```
-┌─────────────────────────────────────────────────────┐
-│                   🌐 Django Web App                │
-├─────────────────────────────────────────────────────┤
-│  📊 Views & Templates    │  🔍 Monitoring System    │
-│  🤖 AI Services          │  📡 Server-Sent Events   │
-│  🗄️ Models & Forms       │  📈 Real-time Dashboard   │
-├─────────────────────────────────────────────────────┤
-│               🧠 AI Agents Layer                    │
-│  PayFlow Agent           │  PayrollVariable Agent   │
-│  (Convention Analysis)   │  (Variable Creation)      │
-├─────────────────────────────────────────────────────┤
-│               🌍 External APIs                      │
-│  🇫🇷 Légifrance API       │  🤖 Anthropic Claude     │
-│  (Government Data)       │  (AI Processing)          │
-└─────────────────────────────────────────────────────┘
-```
+| Area          | Tools                                  |
+| ------------- | -------------------------------------- |
+| Backend       | Django 4.2+, Python 3.8+               |
+| AI / ML       | Anthropic Claude, smolagents, NetworkX |
+| Frontend      | Bootstrap 5, Tabler, Highcharts        |
+| Database      | SQLite (dev), PostgreSQL (prod)        |
+| Real-time     | Server-Sent Events                     |
+| External APIs | French Légifrance (legal data)         |
 
 ---
 
-## 📁 Structure du Projet
+## 🤝 Contributing
 
-```
-payflow/
-├── 🚀 manage.py                    # Point d'entrée Django
-├── 📋 requirements.txt             # Dépendances Python
-├── ⚙️ .env.example                 # Configuration exemple
-├── 🏃 start_app.sh                 # Script de lancement
-│
-├── 🏢 app/                         # Application principale
-│   ├── 📊 models.py                # Modèles de données
-│   ├── 🎮 views.py                 # Vues et API
-│   ├── 🤖 services.py              # Services IA
-│   ├── 🔍 monitoring.py            # Système monitoring
-│   ├── 📝 templates/               # Templates HTML
-│   └── 🗄️ migrations/             # Migrations DB
-│
-├── 🏛️ unaite_project/             # Configuration Django
-│   ├── ⚙️ settings.py              # Paramètres
-│   ├── 🛣️ urls.py                 # Routing
-│   └── 🌐 wsgi.py                 # WSGI config
-│
-├── 🤖 payflow_agents.py           # Agent d'analyse
-├── 📊 payroll_variable_agent.py   # Agent variables
-└── 🌍 import_cc.py                # Module Légifrance
-```
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-## 🛠️ API Endpoints
+## 📄 License
 
-### 🔍 Monitoring Temps Réel
-```http
-GET  /api/monitoring/stream/        # Server-Sent Events
-GET  /api/monitoring/events/        # Liste des événements  
-GET  /api/monitoring/sessions/      # Sessions actives
-```
-
-### 📊 Graphiques Highcharts
-```http
-GET  /api/analyses/{id}/charts/networkgraph/  # Configuration réseau
-GET  /api/analyses/{id}/charts/timeline/      # Configuration timeline  
-GET  /api/analyses/{id}/charts/pie/           # Configuration secteurs
-```
-
-### 🔄 Analyses
-```http
-POST /api/quick-analysis/           # Analyse rapide AJAX
-GET  /analyses/{id}/export/         # Export JSON complet
-```
-
----
-
-## 💡 Exemples d'Utilisation
-
-### 🔍 Analyses typiques
-- *"Analyser les primes d'ancienneté dans cette convention"*
-- *"Calculer les heures supplémentaires et leurs majorations"*  
-- *"Identifier les indemnités de transport et conditions"*
-- *"Rechercher les congés payés et modalités de calcul"*
-
-### 📈 Résultats obtenus
-- Variables de paie structurées (input/intermediate/output)
-- Graphiques de dépendances interactifs
-- Formules de calcul automatisées  
-- Export JSON pour intégration
-
----
-
-## 🔧 Technologies Utilisées
-
-| Catégorie | Technologies |
-|:----------|:-------------|
-| **Backend** | Django 4.2+, Python 3.8+ |
-| **IA/ML** | Anthropic Claude, smolagents, NetworkX |
-| **Frontend** | Bootstrap 5, Tabler, Highcharts |
-| **Base de données** | SQLite (dev), PostgreSQL (prod) |
-| **Temps réel** | Server-Sent Events |
-| **API externes** | Légifrance (Gouvernement français) |
-
----
-
-## 🤝 Contribution
-
-1. **Fork** le projet
-2. **Créer** une branche feature (`git checkout -b feature/amazing-feature`)
-3. **Commit** les changements (`git commit -m 'Add amazing feature'`)
-4. **Push** sur la branche (`git push origin feature/amazing-feature`)
-5. **Ouvrir** une Pull Request
-
----
-
-## 🆘 Support & Documentation
-
-- **🐛 Issues** : [GitHub Issues](https://github.com/AyoubSaidane/payflow/issues)
-- **📚 Documentation** : Voir les commentaires dans le code
-- **💬 Support** : Créer une issue pour toute question
-
----
-
-## 📄 Licence
-
-Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+This project is under the **MIT License** — see [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
 
-**Développé avec ❤️ pour simplifier l'analyse des conventions collectives françaises**
+**Built with ❤️ to simplify French payroll CBA analysis**
 
-[![GitHub stars](https://img.shields.io/github/stars/AyoubSaidane/payflow.svg?style=social)](https://github.com/AyoubSaidane/payflow/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/AyoubSaidane/payflow.svg?style=social)](https://github.com/AyoubSaidane/payflow/network)
+⭐ [Star the repo](https://github.com/AyoubSaidane/payflow) if you like it!
 
 </div>
+```
