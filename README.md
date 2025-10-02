@@ -1,8 +1,8 @@
 ````markdown
-# 🚀 PayFlow — AI-Powered Payroll Variable Analysis  
+# 🚀 PayFlow — AI-Powered Payroll Variable Analysis
 
-[![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://djangoproject.com/)  
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org/)  
+[![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://djangoproject.com/)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **An advanced Django application for automated payroll variable extraction and analysis using AI agents and real-time interactive visualizations.**
@@ -11,7 +11,7 @@
 
 ---
 
-## 🎯 Overview  
+## 🎯 Overview
 
 **PayFlow** transforms how French collective bargaining agreements (CBAs) are analyzed by automating the detection and generation of payroll variables.  
 Using sophisticated AI agents and a modern web interface, it turns complex legal texts into actionable payroll intelligence.
@@ -19,7 +19,7 @@ Using sophisticated AI agents and a modern web interface, it turns complex legal
 ### ✨ Key Features
 
 | 🤖 **AI Agents** | 📊 **Interactive Visuals** | 🔍 **Monitoring** |
-|:-----------------|:---------------------------|:------------------|
+|------------------|---------------------------|-------------------|
 | Context-aware analysis | Interactive Highcharts graphs | Real-time dashboard |
 | Automatic payroll variable detection | NetworkGraph relations | AI agent activity tracking |
 | NetworkX integration | Timeline of variable creation | Performance metrics |
@@ -137,3 +137,5 @@ This project is under the **MIT License** — see [LICENSE](LICENSE) for details
 
 </div>
 ```
+
+✅ This uses **standard GitHub Markdown** — tables, code blocks, and headings render perfectly without extra spacing or strange formatting.
