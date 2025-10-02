@@ -1,11 +1,10 @@
-````markdown
 # 🚀 PayFlow — AI-Powered Payroll Variable Analysis
 
 [![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://djangoproject.com/)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**An advanced Django application for automated payroll variable extraction and analysis using AI agents and real-time interactive visualizations.**
+An advanced Django application for automated payroll variable extraction and analysis using AI agents and real-time interactive visualizations.
 
 > 🏆 **This project was built during the [Agents Hackathon — Hugging Face × Anthropic × Unaite](https://lu.ma/agents-hackathon) (Paris, June 15) and WON the hackathon’s top prize!**
 
@@ -34,7 +33,6 @@ Using sophisticated AI agents and a modern web interface, it turns complex legal
 git clone https://github.com/AyoubSaidane/payflow.git
 cd payflow
 ./start_app.sh
-````
 
 ### Manual
 
