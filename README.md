@@ -6,7 +6,7 @@
 
 An advanced Django application for automated payroll variable extraction and analysis using AI agents and real-time interactive visualizations.
 
-> 🏆 **This project was built during the [Agents Hackathon — Hugging Face × Anthropic × Unaite](https://lu.ma/agents-hackathon) (Paris, June 15) and WON the hackathon’s top prize!**
+> 🏆 **This project was built during the [Agents Hackathon — Hugging Face × Anthropic × Unaite](https://luma.com/qpimrbx3) (Paris, June 15) and WON the hackathon’s top prize!**
 
 ---
 
